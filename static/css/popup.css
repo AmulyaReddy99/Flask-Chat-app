@@ -1,0 +1,17 @@
+.open-button{position: fixed;bottom: 39px;right: 50px;}
+
+#get_voice{width:20px; height: 20px;}
+
+.chat-popup {display: none;position: fixed;bottom: 20px;right: 20px;z-index: 9;  width: 400px; height: 100%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.ai-launcher-icon{position: fixed;bottom: 39px;right: 50px;}
+.cs{
+	background-color: red;
+	padding-top: 30px;
+	padding-right: 30px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+}
+
+
+
