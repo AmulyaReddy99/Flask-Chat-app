@@ -56,7 +56,7 @@ function textinputeval(){
 	
 	if ($('#msg').val()!='') {
 		msg = $("#msg").val();
-		$("#section").append('<p align>');
+		$("#section").append('<p align="right">'+msg+'<img src="static/images/avtar.png" width="30px" height="30px"></p>');
 		$('#msg').val('');
 		$.ajax('/msg/'+msg,{
 			type: 'GET',
@@ -179,7 +179,7 @@ function textinputeval(){
 		//ur code
 	}
 	else{
-		$("#section").append("<p>"+msg+"<hr></p>");
+		$("#section").append("<p>Sorry, this sentence is a little out for me to understand<hr></p>");
 	}
 }
 
