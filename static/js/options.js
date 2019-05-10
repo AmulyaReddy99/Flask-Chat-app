@@ -12,7 +12,7 @@ function selection(selected){
 		for(i in data[selected]){
 			var next_selected=(data[selected][i]).toString();
 			$("#section").append("<button class='btn btn-default' onclick='selection(\""+next_selected+"\")'>"+next_selected+"</button>");
-		}$("#section").append("<hr>");
+		}//$("#section").append("<hr>");
 	}
 	else {msg=selected; $("#get_message").click();}
 }
@@ -32,10 +32,12 @@ function get_translated_lang(reply) {
 	console.log(reply);
 	$.ajax('/reply/'+reply,{
 		type: 'GET',
+		async: false,
         success: function (translated_text, status, xhr) {
         	console.log(translated_text);
         	speech.setLang('hi-IN');
         	$("#section").append(str(translated_text)+'<br>');
+        	speak_out(translated_text);
         	return str(translated_text);
     	},
     	error: function(jqXhr, textStatus, errorMessage) {
@@ -49,7 +51,8 @@ function print_out_lang(reply) {
 	// $("#section").append('<p>'+translated_text+'</p');
 }
 function speak_out_lang(reply){
-	speak_out(get_translated_lang(reply));
+	get_translated_lang(reply);
+	// speak_out(get_translated_lang(reply));
 }
 
 function textinputeval(){
@@ -60,7 +63,7 @@ function textinputeval(){
 		$('#msg').val('');
 		$.ajax('/msg/'+msg,{
 			type: 'GET',
-			// synchronous: false,
+			async: false,
 	        success: function (language, status, xhr) {
 	        	console.log(language);
 	        	//other lang---
@@ -151,8 +154,7 @@ function textinputeval(){
 					<input type="submit" id="submit" class="btn btn-default">					
 				</form>`
 		$("#section").append(form);	
-		// $("#section").append('<iframe width="100%" height="400px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html" scrolling="no" style="border: 0px none; margin-top: -60px; margin-left: -24px; "></iframe>');			
-		// $("#section").append('<iframe width="100%" height="400px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html" style="margin-top:-244px; margin-left:-183px;"></iframe>');			
+		// $("#section").append('<iframe width="100%" height="400px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html"></iframe>');			
 		speak_out_lang(`Kotak bank is the only bank which offers 6 per cent per annum on the Kotak Junior account. There is also an option of 10 year Recurring Deposit and linked Systematic Investment Plans intended to provide long-term savings for your child with a Junior ID card.`);
 	}
 	// else if(msg=="recurring deposits" || msg=="senior citizen fixed deposit" || msg=="tax saving fixed deposit"){
@@ -172,14 +174,14 @@ function textinputeval(){
 		//ur code
 	}
 	else if(msg=="Level 3"){
-		// window.open('mailto:test@example.com?subject=subject&body=body');
+		//window.open('mailto:test@example.com?subject=subject&body=body');
 		//ur code
 	}
 	else if(msg=="Level 4"){
 		//ur code
 	}
 	else{
-		$("#section").append("<p>Sorry, this sentence is a little out for me to understand<hr></p>");
+		$("#section").append("<p>Sorry, this sentence is a little out for me to understand</p>");
 	}
 }
 
