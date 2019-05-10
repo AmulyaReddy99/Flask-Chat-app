@@ -56,6 +56,7 @@ function textinputeval(){
 	
 	if ($('#msg').val()!='') {
 		msg = $("#msg").val();
+		$("#section").append('<p align>');
 		$('#msg').val('');
 		$.ajax('/msg/'+msg,{
 			type: 'GET',
@@ -106,22 +107,22 @@ function textinputeval(){
 		personal_loan_req.map(print_out_lang);
 		// $("#section").append('<ul><li>'+print_out_lang('Proof of Identity like Passport/ PAN Card, Aadhar card, Voter ID, Driving License')+'</li><li>'+print_out_lang('Proof of Residence like Utility Bill, Passport or Leave and License Agreement')+'</li><li>'+print_out_lang('Bank Statement for the last 3 months with income details')+'</li><li>'+print_out_lang('Salary slip for the last 3 months')+'</li><li>'+print_out_lang('2-3 Passport Size photographs')+'</li></ul>');
 		//OK
-		$("#section").append('<iframe width="100%" height="700px" src="https://rcasprod.kotak.com/personal-loan"></iframe>');
+		$("#section").append('<iframe width="100%" height="400px" src="https://rcasprod.kotak.com/personal-loan"></iframe>');
 		speak_out_lang(`Personal loans are loans provided to salaried more than rupees 20000 per month for personal use. you must be active resident in the city for atleast an year`);
 	}
 	else if(/[\w ]*home[\w ]*loan/.test(msg)){
 		speak_out_lang(`We require listed to complete the process:`);
 		home_loan_req.map(print_out_lang);
-		$("#section").append('<iframe width="100%" height="700px" src="https://rcasprod.kotak.com/home-loan"></iframe>');
+		$("#section").append('<iframe width="100%" height="400px" src="https://rcasprod.kotak.com/home-loan"></iframe>');
 		speak_out_lang(`salaried: age 18 to 60, minimum income rupees 20000 per month. If loan is for firm, firm must be at least 3 years old.`);
 	}
 	else if(/[\w ]*car[\w ]*loan/.test(msg)){
 		speak_out_lang(`Eligibility criteria is as listed: `);
 		car_loan_req.map(print_out_lang);
-		$("#section").append('<iframe width="100%" height="700px" src="https://www.kotak.com/en/personal-banking/loans/car-loan/car-loan-apply-now.html"></iframe>');
+		$("#section").append('<iframe width="100%" height="400px" src="https://www.kotak.com/en/personal-banking/loans/car-loan/car-loan-apply-now.html"></iframe>');
 	}
 	else if(/[\w ]*childr?e?n?[\w ]*/.test(msg) || /[\w ]*mutual[\w ]*fund/.test(msg)){
-		$("#section").append('<iframe width="100%" height="700px" src="https://www.kotak.com/en/personal-banking/investments/mutual-funds/apply-for-mutual-funds.html"></iframe>');			
+		$("#section").append('<iframe width="100%" height="400px" src="https://www.kotak.com/en/personal-banking/investments/mutual-funds/apply-for-mutual-funds.html"></iframe>');			
 	}
 	else if(/[\w ]*junior[\w ]*acc?o?u?nt/.test(msg)){
 		form = `<form action="/savingaccount/saveProspectInfoThirdParty.action" method="post" name="juniorAccform" id="juniorAccform" style="padding:30px">
@@ -150,19 +151,19 @@ function textinputeval(){
 					<input type="submit" id="submit" class="btn btn-default">					
 				</form>`
 		$("#section").append(form);	
-		// $("#section").append('<iframe width="100%" height="700px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html" scrolling="no" style="border: 0px none; margin-top: -60px; margin-left: -24px; "></iframe>');			
-		// $("#section").append('<iframe width="100%" height="700px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html" style="margin-top:-244px; margin-left:-183px;"></iframe>');			
+		// $("#section").append('<iframe width="100%" height="400px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html" scrolling="no" style="border: 0px none; margin-top: -60px; margin-left: -24px; "></iframe>');			
+		// $("#section").append('<iframe width="100%" height="400px" src="https://apply.kotak.com/savingaccount/banners/JuniorAccount/index.html" style="margin-top:-244px; margin-left:-183px;"></iframe>');			
 		speak_out_lang(`Kotak bank is the only bank which offers 6 per cent per annum on the Kotak Junior account. There is also an option of 10 year Recurring Deposit and linked Systematic Investment Plans intended to provide long-term savings for your child with a Junior ID card.`);
 	}
 	// else if(msg=="recurring deposits" || msg=="senior citizen fixed deposit" || msg=="tax saving fixed deposit"){
-	// 	$("#section").append('<iframe width="100%" height="700px" src="https://apply.kotak.com/savingaccount/rihome/home.action"></iframe>');			
+	// 	$("#section").append('<iframe width="100%" height="400px" src="https://apply.kotak.com/savingaccount/rihome/home.action"></iframe>');			
 	// }
 	else if(/[\w ]*credit[\w ]*card/.test(msg)){
 		speak_out_lang("Start applying for your credit card");
-		$("#section").append('<iframe width="100%" height="700px" src="https://rcasprod.kotak.com/credit-card"></iframe>');			
+		$("#section").append('<iframe width="100%" height="400px" src="https://rcasprod.kotak.com/credit-card"></iframe>');			
 	}
 	// else if(msg=="life insurance"){
-	// 	$("#section").append('<iframe width="100%" height="700px" src="https://www.kotak.com/en/personal-banking/insurance/life-insurance/apply-for-life-insurance.html"></iframe>');			
+	// 	$("#section").append('<iframe width="100%" height="400px" src="https://www.kotak.com/en/personal-banking/insurance/life-insurance/apply-for-life-insurance.html"></iframe>');			
 	// }
 	else if(msg=="Level 1"){
 		//ur code

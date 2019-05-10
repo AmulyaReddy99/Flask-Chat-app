@@ -2,7 +2,7 @@ openapi: "3.0.0"
 
 info:
   title: "Chat app"
-  description: "A simple chat app"
+  description: "Multilingual chat for banking application"
   version: "1.0"
 
 paths:
