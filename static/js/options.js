@@ -12,7 +12,7 @@ function selection(selected){
 		for(i in data[selected]){
 			var next_selected=(data[selected][i]).toString();
 			$("#section").append("<button class='btn btn-default' onclick='selection(\""+next_selected+"\")'>"+next_selected+"</button>");
-		}//$("#section").append("<hr>");
+		}$("#section").append("<hr>");
 	}
 	else {msg=selected; $("#get_message").click();}
 }
@@ -181,7 +181,7 @@ function textinputeval(){
 		//ur code
 	}
 	else{
-		$("#section").append("<p>Sorry, this sentence is a little out for me to understand</p>");
+		print_out_lang("<p>Sorry, this sentence is a little out for me to understand</p>");
 	}
 }
 
