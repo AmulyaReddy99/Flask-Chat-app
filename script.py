@@ -29,10 +29,5 @@ def reply(reply):
 
 
 if __name__=='__main__':
-<<<<<<< HEAD
 	app.run(host='0.0.0.0')
-=======
-	app.run()
->>>>>>> 3f2e297791f7f0f3650107c189abe8e0bbcf1d74
-
 
