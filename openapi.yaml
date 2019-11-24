@@ -1,0 +1,17 @@
+openapi: "3.0.0"
+
+info:
+  title: "Chat app"
+  description: "Multilingual chat for banking application"
+  version: "1.0"
+
+paths:
+  /ping:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
