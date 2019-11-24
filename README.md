@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Flask chat app
 
 ## Start 
@@ -13,3 +14,6 @@ open localhost:5002
 docker ps -a
 
 docker stop <name>
+=======
+
+>>>>>>> 3f2e297791f7f0f3650107c189abe8e0bbcf1d74
