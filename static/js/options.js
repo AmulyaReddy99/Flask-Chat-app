@@ -102,7 +102,7 @@ function textinputeval(){
 		flag=flag-1;
 	}
 	else if (msg=="call us"||msg=="contact"||msg=="phone call"||msg.includes("call")){
-		$("#section").append('<a href="tel:9391349353">+1 (303) 499-7111</a>');
+		$("#section").append('<a href="tel:+91-9704992942" data-tel-number="tel:+91-9704992942"><div>+91-9704992942  | </div></a>');
 		speak_out_lang(`you can call me by clicking on this phone number.`);
 	}
 	else if(/[\w ]*personal[\w ]*loan/.test(msg)){ 
